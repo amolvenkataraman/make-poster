@@ -1,0 +1,15 @@
+{
+  "name": "make-poster",
+  "description": "Turn the project you built into print-ready posters with one command.",
+  "owner": {
+    "name": "Amol Venkataraman",
+    "url": "https://github.com/amolvenkataraman"
+  },
+  "plugins": [
+    {
+      "name": "make-poster",
+      "source": "./",
+      "description": "Design print-ready posters advertising the current project, exported as PDF at any paper size."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "make-poster",
+  "description": "Design print-ready posters advertising the project you built, exported as PDF at any paper size.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Amol Venkataraman",
+    "url": "https://github.com/amolvenkataraman"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/amolvenkataraman/make-poster",
+  "repository": "https://github.com/amolvenkataraman/make-poster",
+  "keywords": ["poster", "flyer", "print", "pdf", "marketing", "qr-code", "skill"]
+}

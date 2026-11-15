@@ -1,6 +1,17 @@
-# /make-poster
+<!-- header:start -->
+<div align="center">
 
-**Turn the project you built into print-ready posters, with one command in Claude Code.**
+<img alt="/make-poster: Turn the project you built into print-ready posters, with one command in Claude Code." src=".github/assets/banner.svg" width="100%">
+
+![Claude Code: plugin](https://img.shields.io/badge/Claude%20Code-plugin-0f6f68?labelColor=15181c&color=0f6f68)
+[![licence: MIT](https://img.shields.io/badge/licence-MIT-0f6f68?labelColor=15181c&color=0f6f68)](LICENSE)
+
+[How it works](#how-it-works) · [What you get](#what-you-get) · [Installation](#installation) · [Options](#options) · [Limitations](#limitations)
+
+</div>
+
+<a href="https://haiscale.amolven.com/A1/"><img alt="HAI Scale A1, Mostly automated. Most of the code was written by AI coding agents. I directed the design, reviewed the changes and tested it on my own projects. Provided as is, with no warranty." src=".github/assets/hai.svg" width="100%"></a>
+<!-- header:end -->
 
 `/make-poster` reads your codebase and your conversation with Claude to learn what
 you built, asks a few questions about who the posters are for, then designs,

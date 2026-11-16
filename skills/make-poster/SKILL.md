@@ -1,7 +1,7 @@
 ---
 name: make-poster
 description: Design printable posters advertising the current project, exported as PDF at the user's chosen size. Use when someone says "/make-poster", "make a poster", "design a flyer", "posters for campus", or wants print material promoting what they built. Reads the chat history, README and codebase for the product story and brand, asks about audience, size, number of designs and color mode, then designs, renders and self-reviews the posters.
-version: 1.0.0
+version: 1.1.0
 author: Amol Venkataraman
 ---
 

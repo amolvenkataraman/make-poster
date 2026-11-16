@@ -135,6 +135,7 @@ tests/                        script tests and layout fixtures: node --test (aft
 
 | Version | Changes |
 |---|---|
+| 1.1.0 | Fixes and stricter checks: a pinned rendering runtime that needs Node 20+ (with a clear message on older Node), `check-fit` now catches text spilling out of its box and overlapping elements, previews and fit checks measure the same `.poster` element, warnings for web fonts that fail to load, and an optional QR decode check. See [CHANGELOG.md](CHANGELOG.md). |
 | 1.0.0 | First release: context gathering, guided questions, multi-concept designs, color and designed mono variants, UTM-tracked QR codes, render + fit check + self-review loop. |
 
 ## License

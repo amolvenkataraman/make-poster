@@ -17,6 +17,24 @@
 you built, asks a few questions about who the posters are for, then designs,
 renders and reviews posters as PDFs sized exactly for the paper you'll print on.
 
+## Gallery
+
+Real output, one poster per project, each designed at US Letter from that project's
+own README, code and brand. Click a poster for a larger version.
+
+<table>
+  <tr>
+    <td align="center" valign="top" width="33%"><a href="docs/gallery/01-make-poster.png"><img src="docs/gallery/01-make-poster.png" alt="Orange poster: Your website, now a poster. A browser window turns into a printed page with a QR code." width="240"></a><br><sub><b>make-poster</b>, this plugin</sub></td>
+    <td align="center" valign="top" width="33%"><a href="docs/gallery/02-hai-scale.png"><img src="docs/gallery/02-hai-scale.png" alt="Cream poster: Say how much AI made it. Seven coloured tiers from fully human to fully automated." width="240"></a><br><sub><b><a href="https://haiscale.amolven.com">HAI Scale</a></b>, a label for disclosing AI use</sub></td>
+    <td align="center" valign="top" width="33%"><a href="docs/gallery/03-allthecareers.png"><img src="docs/gallery/03-allthecareers.png" alt="White poster: I am looking for co-ops in SWE, with the blanks underlined in blue and the other options listed below." width="240"></a><br><sub><b><a href="https://allthecareers.com">AllTheCareers</a></b>, a tech job board</sub></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><a href="docs/gallery/04-transitlog.png"><img src="docs/gallery/04-transitlog.png" alt="Teal poster: How much did I spend on BART? A receipt-style sample report with the BART row highlighted." width="240"></a><br><sub><b><a href="https://github.com/upstream-wontfix/transitlog">transitlog</a></b>, a transit-card history CLI</sub></td>
+    <td align="center" valign="top"><a href="docs/gallery/05-tplinkctl.png"><img src="docs/gallery/05-tplinkctl.png" alt="Grey poster: Ask the router what's wrong. A terminal shows tplink diagnose finding two network errors." width="240"></a><br><sub><b><a href="https://github.com/upstream-wontfix/tplinkctl">tplinkctl</a></b>, a TP-Link router CLI</sub></td>
+    <td></td>
+  </tr>
+</table>
+
 ## How it works
 
 1. **Reads your project.** README, landing-page copy, changelog, recent commits,

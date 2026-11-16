@@ -64,9 +64,10 @@ Then, in any project:
 /make-poster for first-year students, 2 designs, black and white
 ```
 
-**Requirements:** Node.js 18+. The first run asks before installing its rendering
-runtime (Playwright's headless Chromium, a QR code library and pdf-lib, about 150 MB)
-into `~/.cache/make-poster`. Nothing is installed into your project.
+**Requirements:** Node.js 20+. The first run asks before installing its rendering
+runtime (Playwright's headless Chromium, a QR code library and pdf-lib, at pinned
+versions, about 150 MB) into `~/.cache/make-poster`. Nothing is installed into your
+project.
 
 ## Options
 
@@ -86,13 +87,17 @@ into `~/.cache/make-poster`. Nothing is installed into your project.
 skills/make-poster/
   SKILL.md                    the workflow Claude follows
   references/design-guide.md  print rules: sizes, type minimums, QR codes, mono, review checklist
+  runtime/                    the rendering runtime's pinned versions (package.json + lockfile)
   scripts/
     setup.sh                  one-time runtime install into ~/.cache/make-poster
     render.mjs                HTML → PDF at the exact @page size, plus PNG / grayscale previews
-    check-fit.mjs             fails if anything overflows the safe margin
+    check-fit.mjs             fails on content outside the safe margin, spilling out of its
+                              box or overlapping; warns when a web font didn't load
     qr.mjs                    QR code as SVG
+    qr-check.mjs              optional: decodes the QR codes in previews (needs OpenCV)
     pdf-info.mjs              page count and size of each PDF
     merge.mjs                 combines PDFs into one file for printing
+tests/                        script tests and layout fixtures: node --test (after setup.sh)
 ```
 
 ## Limitations
@@ -102,8 +107,9 @@ skills/make-poster/
   user-facing copy to draw from.
 - Fonts come from the project or Google Fonts; fully offline rendering falls back to
   system fonts.
-- It checks QR code size and placement, but doesn't scan-test the codes. Scan one
-  printout before printing a stack.
+- It checks QR code size and placement, and can decode the codes from the previews
+  when OpenCV is installed, but that isn't a phone scan of paper. Scan one printout
+  before printing a stack.
 - Posters are designed for readability and honesty over maximal flair; describe the
   vibe you want if you'd like something bolder.
 

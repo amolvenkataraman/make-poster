@@ -10,7 +10,8 @@ author: Amol Venkataraman
 Turn the project into print-ready posters: real claims from the codebase, the
 project's own brand, sized exactly for the paper they'll be printed on.
 
-`<skill>` below means this skill's base directory. Requires Node 18+.
+`<skill>` below means this skill's base directory. Requires Node 20+ (`setup.sh` and
+the scripts stop with a clear message on older versions).
 
 ## 0. Parse the invocation
 
@@ -109,7 +110,10 @@ QR codes, monochrome, bleed).
   `.poster` is a flex column with the safe margin as its padding; header (logo,
   optional badge) at the top, `<div class="content">` with `margin: auto 0` (so spare
   height splits evenly above and below it), and the CTA card last. `check-fit.mjs`
-  relies on the root having class `poster`.
+  and the previews from `render.mjs` both rely on the root having class `poster`.
+- Decoration that overlaps or bleeds on purpose (a sticker over the headline, a
+  shape behind a card) gets `data-fit="ignore"`, so `check-fit.mjs` doesn't flag it.
+  Absolutely positioned and transformed elements count as decoration already.
 - QR code for the CTA URL: `node <skill>/scripts/qr.mjs <url> <out.svg>`, then
   inline the SVG. If the user wants to measure scans, make one code per variant
   (`?utm_source=poster&utm_campaign=<design>` and `<design>-mono`); keep the
@@ -121,9 +125,10 @@ QR codes, monochrome, bleed).
 
 ## 5. Render and self-review
 
-One-time setup (installs Playwright's Chromium and helpers into
-`~/.cache/make-poster`; ask before running it the first time, it downloads
-~150 MB):
+One-time setup (installs the pinned runtime, Playwright's Chromium and helpers,
+into `~/.cache/make-poster`; ask before running it the first time, it downloads
+~150 MB). Re-running it is cheap and updates the runtime when the skill's pinned
+versions change; the scripts say when that's needed:
 
 ```bash
 bash <skill>/scripts/setup.sh
@@ -137,11 +142,21 @@ node <skill>/scripts/render.mjs src/<file>.html pdf/<file>.pdf --preview preview
 # to check they still read when photocopied
 ```
 
-Check that nothing overflows the safe margin (exits non-zero if something does;
-previews alone make small overflows easy to miss):
+Check the layout (exits non-zero on any problem; previews alone make small overflows
+easy to miss). It flags content outside the safe margin, text or elements spilling
+out of (or clipped by) the box that holds them, and overlapping siblings, and warns
+when a web font didn't load (so the poster fell back to a system font: fix the font
+link, or embed the font file):
 
 ```bash
 node <skill>/scripts/check-fit.mjs src/*.html
+```
+
+Optionally decode the QR codes in the previews (needs python3 with OpenCV; it says
+"skipped" and exits 0 without it). `--expect` checks each code starts with the URL:
+
+```bash
+node <skill>/scripts/qr-check.mjs preview/*.png --expect <url>
 ```
 
 **Look at every preview** (Read the PNG) and check against the review list in

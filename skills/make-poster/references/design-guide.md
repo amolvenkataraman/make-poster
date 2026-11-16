@@ -87,10 +87,11 @@ A passer-by should get, in order: **what it is → why they'd care → what to d
 ## Review checklist (for every preview)
 
 - [ ] Page size matches the request (check with `pdf-info.mjs`).
-- [ ] `check-fit.mjs` passes; nothing clipped or hidden; spare space is balanced,
+- [ ] `check-fit.mjs` passes with no font warnings; nothing clipped or hidden; spare space is balanced,
       not piled into one gap.
 - [ ] Headline readable from across a room; hierarchy passes the 3-second test.
 - [ ] QR code big enough, with a quiet zone, pointing at the right URL; URL printed.
+      `qr-check.mjs` decodes it from the preview when OpenCV is available.
 - [ ] Brand colors and fonts are the project's; the logo isn't distorted.
 - [ ] Contrast is fine, including in the grayscale preview.
 - [ ] No placeholder text, typos, or claims not backed by the brief.

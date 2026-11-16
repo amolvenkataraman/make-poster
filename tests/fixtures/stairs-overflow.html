@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: 8.5in 11in; margin: 0 }
+* { box-sizing: border-box; margin: 0; padding: 0 }
+body { font-family: "DejaVu Sans", Arial, sans-serif }
+.poster { width: 8.5in; height: 11in; padding: 0.6in; display: flex; flex-direction: column }
+.content { margin: auto 0 }
+h1 { font-size: 72pt; line-height: 1.0 }
+p { font-size: 16pt; line-height: 1.35; margin-top: 12pt }
+.cta { border: 1.5pt solid #000; padding: 12pt; font-size: 14pt }
+.stairs { margin-top: 24pt; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8pt; align-items: end }
+.step { background: #ddd; border-radius: 8pt 8pt 0 0; padding: 12pt 12pt 0; display: flex; flex-direction: column }
+.step .n { font-size: 11pt }
+.step b { font-size: 19pt; line-height: 1.08; margin-top: 4pt }
+.step span { font-size: 12.5pt; line-height: 1.25; margin-top: 4pt }
+.step code { font-size: 11pt; margin-top: auto; padding: 8pt 0 10pt }
+.s1 { height: 1.45in } .s2 { height: 1.9in } .s3 { height: 2.35in }
+.ground { height: 6pt; background: #000 }
+</style>
+</head>
+<body>
+<!-- Regression: the AllTheCareers "every step" poster. The first step's card was too short
+     for its text, so "/co-ops" ran out of the card and under the ground line, while the
+     old check-fit (safe margin only) said it fit. -->
+<div class="poster">
+  <header>AllTheCareers</header>
+  <div class="content">
+    <h1>From first co-op<br>to senior role.</h1>
+    <div class="stairs">
+      <div class="step s1"><span class="n">01</span><b>Co-ops &amp; Internships</b><span>for students</span><code>/co-ops</code></div>
+      <div class="step s2"><span class="n">02</span><b>Early-Career Roles</b><span>new grad and junior</span><code>/early-career</code></div>
+      <div class="step s3"><span class="n">03</span><b>Experienced Roles</b><span>mid-level, senior, staff and executive</span><code>/experienced</code></div>
+    </div>
+    <div class="ground"></div>
+  </div>
+  <div class="cta">allthecareers.com</div>
+</div>
+</body>
+</html>

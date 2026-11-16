@@ -1,0 +1,14 @@
+{
+  "name": "make-poster-runtime",
+  "private": true,
+  "description": "Rendering runtime for /make-poster. setup.sh installs it into ~/.cache/make-poster, never into the user's project.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "pdf-lib": "1.17.1",
+    "playwright": "1.64.0",
+    "qrcode": "1.5.4"
+  }
+}
